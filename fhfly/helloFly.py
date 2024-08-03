@@ -71,7 +71,7 @@ class fly:
             self.voice = textToSpeed()
         except Exception as e:
             self.voice = False
-
+    
     def getTicks_sec(self):
         return self.port.getSec()
 
@@ -497,7 +497,7 @@ class fly:
         self.showText(id, "robotArmRecord(" + str(id) + "," + str(mode) + ")")
         self.autoDelay(self.setTime)
 
-    def ShuiPingHuanRao(self, id, type, X, Y, A, S):
+    def horizontalCircle(self, id, type, X, Y, A, S):
         self.showText(id, str(id) + "号机，开始水平环绕...")
         self.sleep(1)
         self.setAutoDelay(0)
@@ -529,7 +529,7 @@ class fly:
         self.zSpeed(id, S)
         self.xySpeed(id, S)
 
-    def ChuiZhiHuanRao(self, id, dir, D, Z, A, S):
+    def verticalCircle(self, id, dir, D, Z, A, S):
         self.showText(id, str(id) + "号机，开始垂直环绕...")
         self.sleep(1)
         self.setAutoDelay(0)
@@ -570,7 +570,7 @@ class fly:
         self.zSpeed(id, S)
         self.xySpeed(id, S)
 
-    def ZhengXianHuanRao(self, id, dir, A0, A1, L, H, S):
+    def sineCircle(self, id, dir, A0, A1, L, H, S):
         self.showText(id, str(id) + "号机，开始正弦环绕...")
         self.sleep(1)
         self.setAutoDelay(0)
@@ -614,7 +614,7 @@ class fly:
         self.zSpeed(id, S)
         self.xySpeed(id, S)
 
-    def WangDegYiDong(self, id, Deg, Dist, Speed):
+    def moveByAngle(self, id, Deg, Dist, Speed):
         self.showText(id, str(id) + "号机，开始移动...")
         self.sleep(1)
         self.setAutoDelay(0)
@@ -635,8 +635,9 @@ class fly:
         self.sleep(1)
         self.setAutoDelay(1)
 
-    def WangDianYiDong(self, id, X, Y, Dist, Speed):
+    def moveToPoint(self, id, X, Y, Dist, Speed):
         dx = X - (self.getFlySensor(id, "loc_x") + self.getFlySensor(id, "err_x"))
         dy = Y - (self.getFlySensor(id, "loc_y") + self.getFlySensor(id, "err_y"))
         FangXiangJiao = math.atan2(dx, dy) * 57.29
         self.WangDegYiDong(id, FangXiangJiao, Dist, Speed)
+

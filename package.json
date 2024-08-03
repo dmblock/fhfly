@@ -1,0 +1,26 @@
+{
+  "name": "fhfly",
+  "version": "1.0.0",
+  "description": "* 安装依赖包 ```bash pip install -r requirements.txt ``` * 使用示例 ```python // 在根录下创建py文件 from fhfly.helloFly import fly",
+  "main": "main.js",
+  "type": "module",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmblock/fhfly.git"
+  },
+  "author": "dmblock",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/dmblock/fhfly/issues"
+  },
+  "homepage": "https://github.com/dmblock/fhfly#readme",
+  "dependencies": {
+    "pythonia": "^1.2.1"
+  }
+}
